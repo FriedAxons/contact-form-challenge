@@ -5,28 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Contact Us</h1>
-    <div class="name-inputs">
-      <label for="firstname-input">First Name</label>
-      <input type="text" id="firstname-input" />
-      <label for="lastname-input">Last Name</label>
-      <input type="text" id="lastname-input" />
+    <div class="contact-form-container">
+      <h1>Contact Us</h1>
+      <div class="name-inputs">
+        <label for="firstname-input">First Name</label>
+        <input type="text" id="firstname-input" />
+        <label for="lastname-input">Last Name</label>
+        <input type="text" id="lastname-input" />
+      </div>
+      <label for="email-input">Email Address</label>
+      <input type="email" id="email-input" />
+      <div class="radio-inputs">
+        <input type="radio" id="general-enquiry-radio" />
+        <label for="general-enquiry-radio">General Enquiry</label>
+        <input type="radio" id="support-request-radio" />
+        <label for="support-request-radio">Support Request</label>
+      </div>
+      <label for="message-textarea">Message</label>
+      <textarea id="message-textarea"></textarea>
+      <div class="checkbox-container">
+        <input type="checkbox" id="checkbox" />
+        <label for="checkbox">I consent to being contacted by the team</label>
+      </div>
+      <button type="submit">Submit</button>
+      <script src="index.js"></script>
     </div>
-    <label for="email-input">Email Address</label>
-    <input type="email" id="email-input" />
-    <div class="radio-inputs">
-      <input type="radio" id="general-enquiry-radio" />
-      <label for="general-enquiry-radio">General Enquiry</label>
-      <input type="radio" id="support-request-radio" />
-      <label for="support-request-radio">Support Request</label>
-    </div>
-    <label for="message-textarea">Message</label>
-    <textarea id="message-textarea"></textarea>
-    <input type="checkbox" id="checkbox" />
-    <label for="checkbox">I consent to being contacted by the team</label>
-    <button type="submit">Submit</button>
-    <script src="index.js"></script>
   </body>
 </html>
