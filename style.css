@@ -15,10 +15,48 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 75%;
+  min-width: 30%;
   min-height: 70vh;
   border-radius: 15px;
   padding: 15px 40px 40px 40px;
   background-color: hsl(0, 0%, 100%);
   color: hsl(187, 24%, 22%);
+}
+
+.name-inputs {
+  display: flex;
+}
+
+.firstName {
+  display: flex;
+  flex-direction: column;
+}
+
+.lastName {
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  display: flex; 
+  flex-direction: column;
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: hsl(169, 82%, 27%); 
+  color: hsl(0, 0%, 100%);
 }
