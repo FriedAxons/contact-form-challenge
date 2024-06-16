@@ -17,26 +17,29 @@
       <h1>Contact Us</h1>
       <div class="name-inputs">
         <div class="firstName">
-          <label for="firstname-input">First Name</label>
+          <label for="firstname-input">First Name<span>*</span></label>
           <input type="text" id="firstname-input" />
         </div>
         <div class="lastName">
-          <label for="lastname-input">Last Name</label>
+          <label for="lastname-input">Last Name<span>*</span></label>
           <input type="text" id="lastname-input" />
         </div>
       </div>
       <div class="email">
-        <label for="email-input">Email Address</label>
+        <label for="email-input">Email Address<span>*</span></label>
         <input type="email" id="email-input" />
       </div>
-      <div class="radio-inputs">
-        <input type="radio" id="general-enquiry-radio" />
-        <label for="general-enquiry-radio">General Enquiry</label>
-        <input type="radio" id="support-request-radio" />
-        <label for="support-request-radio">Support Request</label>
+      <div class="radio-selection">
+        <label for="general-enquiry-radio">Query Type<span>*</span></label>
+        <div class="radios">
+          <input type="radio" id="general-enquiry-radio" />
+          <label for="general-enquiry-radio">General Enquiry</label>
+          <input type="radio" id="support-request-radio" />
+          <label for="support-request-radio">Support Request</label>
+        </div>
       </div>
       <div class="textarea">
-        <label for="message-textarea">Message</label>
+        <label for="message-textarea">Message<span>*</span></label>
         <textarea id="message-textarea"></textarea>
       </div>
       <div class="checkbox-container">
