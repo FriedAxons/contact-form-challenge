@@ -54,6 +54,14 @@ input {
   flex-direction: column;
 }
 
+.radios {
+  display: flex;
+}
+
+.general-enquiry-radio, .support-request-radio {
+  border: 1px solid hsl(186, 15%, 59%);
+}
+
 .textarea {
   display: flex;
   flex-direction: column;
@@ -75,5 +83,5 @@ button {
 
 span {
   color: hsl(169, 82%, 27%);
-  /* margin-left: 5px; */
+  margin-left: 8px;
 }

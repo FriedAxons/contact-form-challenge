@@ -30,12 +30,16 @@
         <input type="email" id="email-input" />
       </div>
       <div class="radio-selection">
-        <label for="general-enquiry-radio">Query Type<span>*</span></label>
-        <div class="radios">
-          <input type="radio" id="general-enquiry-radio" />
-          <label for="general-enquiry-radio">General Enquiry</label>
-          <input type="radio" id="support-request-radio" />
-          <label for="support-request-radio">Support Request</label>
+        <label for="radios">Query Type<span>*</span></label>
+        <div class="radios" id="radios">
+          <div class="general-enquiry-radio">
+            <input type="radio" id="general-enquiry-selection" />
+            <label for="general-enquiry-selection">General Enquiry</label>
+          </div>
+          <div class="support-request-radio">
+            <input type="radio" id="support-request-selection" />
+            <label for="support-request-selection">Support Request</label>
+          </div>
         </div>
       </div>
       <div class="textarea">
@@ -44,7 +48,9 @@
       </div>
       <div class="checkbox-container">
         <input type="checkbox" id="checkbox" />
-        <label for="checkbox">I consent to being contacted by the team<span>*</span></label>
+        <label for="checkbox"
+          >I consent to being contacted by the team<span>*</span></label
+        >
       </div>
       <button type="submit">Submit</button>
       <script src="index.js"></script>
