@@ -15,12 +15,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 30%;
+  min-width: 35%;
   min-height: 70vh;
   border-radius: 15px;
   padding: 15px 40px 40px 40px;
   background-color: hsl(0, 0%, 100%);
   color: hsl(187, 24%, 22%);
+}
+
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid hsl(186, 15%, 59%);
+  margin-top: 10px;
 }
 
 .name-inputs {
