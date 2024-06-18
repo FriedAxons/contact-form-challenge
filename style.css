@@ -11,10 +11,14 @@ body {
   font-style: normal;
 }
 
+h1 {
+  margin: 20px 0 10px;
+}
+
 .contact-form-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   min-width: 30%;
   min-height: 70vh;
   border-radius: 15px;
