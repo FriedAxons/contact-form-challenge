@@ -12,19 +12,22 @@ body {
 }
 
 h1 {
-  margin: 20px 0 10px;
+  margin: 20px 0 0;
 }
 
 .contact-form-container {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   min-width: 30%;
-  min-height: 70vh;
+  min-height: 69vh;
   border-radius: 15px;
-  padding: 15px 40px 40px 40px;
+  padding: 20px 35px 0px 35px;
   background-color: hsl(0, 0%, 100%);
   color: hsl(187, 24%, 22%);
+}
+
+.name-inputs, .email, .radio-selection, .textarea {
+  margin: 10px 0px 0px 0px;
 }
 
 input {
@@ -38,7 +41,7 @@ input {
 }
 
 .radio-label {
-  margin: 15px 0 5px;
+  margin: 15px 0px 5px;
 }
 
 .name-inputs {
@@ -83,15 +86,25 @@ input[type='radio'] {
 .textarea {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 textarea {
   resize: none;
+  overflow: hidden;
+  padding-bottom: 50px;
+  border: 1px solid hsl(186, 15%, 59%);
+  border-radius: 6px;
+}
+
+input#checkbox {
+  margin: 12px 0px 0px 3px;
 }
 
 button {
   font-family: inherit;
   font-size: 16px;
+  margin: 35px 0px 0px 0px;
   padding: 15px;
   border: none;
   border-radius: 8px;
