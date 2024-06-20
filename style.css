@@ -93,6 +93,7 @@ input[type="radio"] {
 .support-request-radio {
   border: 1px solid hsl(186, 15%, 59%);
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .general-enquiry-radio {
@@ -119,6 +120,10 @@ textarea {
   font: inherit;
 }
 
+input#checkbox, .checkbox-container > label {
+  cursor: pointer;
+}
+
 input#checkbox {
   margin: 0px 15px 0px 3px;
 }
@@ -132,6 +137,7 @@ button {
   border-radius: 8px;
   background-color: hsl(169, 82%, 27%);
   color: hsl(0, 0%, 100%);
+  cursor: pointer;
 }
 
 span {
