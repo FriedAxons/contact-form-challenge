@@ -26,7 +26,10 @@ h1 {
   color: hsl(187, 24%, 22%);
 }
 
-.name-inputs, .email, .radio-selection, .textarea {
+.name-inputs,
+.email,
+.radio-selection,
+.textarea {
   margin: 10px 0px 0px 0px;
 }
 
@@ -54,7 +57,7 @@ input {
 }
 
 input#firstname-input {
-  padding-right: 110px;
+  padding-right: 127px;
 }
 
 .lastName {
@@ -64,7 +67,7 @@ input#firstname-input {
 }
 
 input#lastname-input {
-  padding-right: 130px;
+  padding-right: 131px;
 }
 
 .email {
@@ -82,14 +85,23 @@ input#lastname-input {
   margin-top: 10px;
 }
 
-input[type='radio'] {
-  margin: 0;
+input[type="radio"] {
+  margin: 0px 10px 0px 0px;
 }
 
-.general-enquiry-radio, .support-request-radio {
+.general-enquiry-radio,
+.support-request-radio {
   border: 1px solid hsl(186, 15%, 59%);
-  padding: 10px;
   border-radius: 6px;
+}
+
+.general-enquiry-radio {
+  padding: 10px 127px 10px 20px;
+}
+
+.support-request-radio {
+  padding: 10px 122px 10px 20px;
+  margin-left: 15px;
 }
 
 .textarea {
@@ -101,13 +113,14 @@ input[type='radio'] {
 textarea {
   resize: none;
   overflow: hidden;
-  padding-bottom: 50px;
+  padding: 13px 15px 45px 15px;
   border: 1px solid hsl(186, 15%, 59%);
   border-radius: 6px;
+  font: inherit;
 }
 
 input#checkbox {
-  margin: 12px 0px 0px 3px;
+  margin: 0px 15px 0px 3px;
 }
 
 button {
@@ -124,4 +137,8 @@ button {
 span {
   color: hsl(169, 82%, 27%);
   margin-left: 8px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
 }
