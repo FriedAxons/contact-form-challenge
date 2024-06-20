@@ -53,9 +53,18 @@ input {
   flex-direction: column;
 }
 
+input#firstname-input {
+  padding-right: 110px;
+}
+
 .lastName {
   display: flex;
   flex-direction: column;
+  margin-left: 15px;
+}
+
+input#lastname-input {
+  padding-right: 130px;
 }
 
 .email {
