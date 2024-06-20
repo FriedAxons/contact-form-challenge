@@ -21,12 +21,14 @@
             >First Name<span>*</span></label
           >
           <input type="text" id="firstname-input" />
+          <p class="firstname-error">This field is required</p>
         </div>
         <div class="lastName">
           <label for="lastname-input" class="label"
             >Last Name<span>*</span></label
           >
           <input type="text" id="lastname-input" />
+          <p class="lastname-error">This field is required</p>
         </div>
       </div>
       <div class="email">
@@ -34,6 +36,7 @@
           >Email Address<span>*</span></label
         >
         <input type="email" id="email-input" />
+        <p class="email-error">Please enter a valid email address</p>
       </div>
       <div class="radio-selection">
         <label for="radios" class="radio-label">Query Type<span>*</span></label>
@@ -59,18 +62,21 @@
             >
           </div>
         </div>
+        <p class="radio-error">Please select a query type</p>
       </div>
       <div class="textarea">
         <label for="message-textarea" class="label"
           >Message<span>*</span></label
         >
         <textarea id="message-textarea"></textarea>
+        <p class="textarea-error">This field is required</p>
       </div>
       <div class="checkbox-container">
         <input type="checkbox" id="checkbox" />
         <label for="checkbox"
           >I consent to being contacted by the team<span>*</span></label
         >
+        <p class="consent-error">To submit this form, please consent to being contacted</p>
       </div>
       <button type="submit">Submit</button>
     </form>
