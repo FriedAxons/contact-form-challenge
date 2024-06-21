@@ -16,9 +16,11 @@ const formContainer = document.querySelector(".contact-form-container");
 
 function validateTextInput(input, errorElement) {
   if (input.value.trim() === "") {
+    input.style.border = "1px solid hsl(0, 66%, 54%)";
     errorElement.classList.add("active");
     return false;
   } else {
+    input.style.border = "1px solid hsl(186, 15%, 59%)";
     errorElement.classList.remove("active");
     return true;
   }
@@ -27,9 +29,11 @@ function validateTextInput(input, errorElement) {
 function validateEmailInput(input, errorElement) {
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   if (!emailPattern.test(input.value)) {
+    input.style.border = "1px solid hsl(0, 66%, 54%)";
     errorElement.classList.add("active");
     return false;
   } else {
+    input.style.border = "1px solid hsl(186, 15%, 59%)";
     errorElement.classList.remove("active");
     return true;
   }
@@ -72,7 +76,16 @@ function countActiveErrors() {
   return activeErrors;
 }
 
-// function adjustPadding() {}
+// function adjustPadding() {
+//   const activeErrors = countActiveErrors();
+// }
+
+document.querySelectorAll(".radio-container").forEach((container) => {
+  container.addEventListener("click", () => {
+    const radioInput = container.querySelector('input[type="radio"]');
+    radioInput.checked = true;
+  });
+});
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -92,7 +105,14 @@ submitButton.addEventListener("click", (e) => {
     isMessageValid &&
     isCheckboxValid
   ) {
-    form.submit();
+    firstnameInput.value = "";
+    lastnameInput.value = "";
+    emailInput.value = "";
+    messageInput.value = "";
+    checkbox.checked = false;
+    radioInputs.forEach((radio) => (radio.checked = false));
+
+    successContainer.classList.add("active");
   } else {
     adjustPadding();
   }
