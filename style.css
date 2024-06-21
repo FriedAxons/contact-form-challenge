@@ -91,6 +91,12 @@ input {
   display: flex;
 }
 
+#firstname-input,
+#lastname-input {
+  cursor: pointer;
+}
+
+
 .firstName {
   display: flex;
   flex-direction: column;
@@ -104,7 +110,7 @@ input {
   display: block;
 }
 
-input#firstname-input {
+#firstname-input {
   padding-right: 127px;
 }
 
@@ -122,13 +128,17 @@ input#firstname-input {
   display: block;
 }
 
-input#lastname-input {
+#lastname-input {
   padding-right: 131px;
 }
 
 .email {
   display: flex;
   flex-direction: column;
+}
+
+#email-input {
+  cursor: pointer;
 }
 
 .email-error {
@@ -176,11 +186,11 @@ input[type="radio"] {
 }
 
 .general-enquiry-radio {
-  padding: 10px 127px 10px 20px;
+  padding: 10px 142px 10px 20px;
 }
 
 .support-request-radio {
-  padding: 10px 122px 10px 20px;
+  padding: 10px 145px 10px 20px;
   margin-left: 15px;
 }
 
