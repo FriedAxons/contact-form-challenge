@@ -15,8 +15,13 @@ h1 {
   margin: 20px 0 0;
 }
 
+h3 {
+  margin: 20px 0px 0px 0px;
+}
+
 h4 {
-  margin: 0;
+  margin: 15px 0px 0px 0px;
+  font-weight: 400;
 }
 
 .success-container {
@@ -27,7 +32,7 @@ h4 {
   left: 0;
   right: 0;
   top: -99px;
-  /* padding:; */
+  padding: 0px 25px 23px 25px;
   background-color: hsl(187, 24%, 22%);
   color: hsl(0, 0%, 100%);
   border-radius: 10px;
