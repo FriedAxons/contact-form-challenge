@@ -31,6 +31,7 @@ h4 {
 }
 
 .success-container {
+  display: none;
   position: absolute;
   max-width: 60%;
   margin-left: auto;
@@ -38,7 +39,7 @@ h4 {
   left: 0;
   right: 0;
   top: -99px;
-  padding: 5px 25px 18px 25px;
+  padding: 5px 25px 13px 25px;
   background-color: hsl(187, 24%, 22%);
   color: hsl(0, 0%, 100%);
   border-radius: 10px;
