@@ -79,6 +79,10 @@ input {
   border: 1px solid hsl(186, 15%, 59%);
 }
 
+input:hover {
+  border: 1px solid hsl(169, 82%, 27%);
+}
+
 .label {
   margin: 15px 0px 10px;
 }
@@ -155,9 +159,32 @@ input {
   display: block;
 }
 
+.contact-form-container input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.contact-form-container input[type="radio"]:checked {
+  background-image: url("/assets/images/icon-radio-selected.svg");
+  background-size: cover;
+  background-position: center;
+  border: none;
+}
+
 .radio-selection {
   display: flex;
   flex-direction: column;
+}
+
+.radio-container {
+  display: flex;
+  align-items:center;
 }
 
 .radio-container.selected {
@@ -226,6 +253,10 @@ textarea {
   border-radius: 6px;
   font: inherit;
   color: inherit;
+}
+
+textarea:hover{
+  border: 1px solid hsl(169, 82%, 27%);
 }
 
 .consent-error {
