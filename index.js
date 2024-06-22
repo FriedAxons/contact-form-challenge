@@ -76,15 +76,21 @@ function countActiveErrors() {
   return activeErrors;
 }
 
-// function adjustPadding() {
-//   const activeErrors = countActiveErrors();
-// }
+function adjustPadding() {
+  const activeErrors = countActiveErrors();
+  if (activeErrors === 1) {
+    formContainer.style.padding = "20px 35px 10px 35px";
+  } else {
+    formContainer.style.padding = "20px 35px 0px 35px";
+  }
+}
 
 document.querySelectorAll(".radio-container").forEach((container) => {
   container.addEventListener("click", () => {
     const radioInput = container.querySelector('input[type="radio"]');
     container.style.border = "1px solid hsl(169, 82%, 27%)";
     radioInput.checked = true;
+    radioInput.dispatchEvent(new Event("change"));
 
     // Remove the selected class from all radio containers
     document
@@ -126,3 +132,40 @@ submitButton.addEventListener("click", (e) => {
     adjustPadding();
   }
 });
+
+function addInputListeners(input, errorElement, minLength = 1) {
+  input.addEventListener("input", () => {
+    if (input.value.trim().length >= minLength) {
+      input.style.border = "1px solid hsl(186, 15%, 59%)";
+      errorElement.classList.remove("active");
+    } else {
+      input.style.border = "1px solid hsl(0, 66%, 54%)";
+      errorElement.classList.add("active");
+    }
+  });
+}
+
+function addRadioListeners(radioInputs, errorElement) {
+  radioInputs.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (radio.checked) {
+        errorElement.classList.remove("active");
+      }
+    });
+  });
+}
+
+function addCheckboxListener(checkbox, errorElement) {
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      errorElement.classList.remove("active");
+    }
+  });
+}
+
+addInputListeners(firstnameInput, firstnameError);
+addInputListeners(lastnameInput, lastnameError);
+addInputListeners(emailInput, emailError);
+addInputListeners(messageInput, textareaError);
+addRadioListeners(radioInputs, radioError);
+addCheckboxListener(checkbox, checkboxError);
