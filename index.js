@@ -83,7 +83,16 @@ function countActiveErrors() {
 document.querySelectorAll(".radio-container").forEach((container) => {
   container.addEventListener("click", () => {
     const radioInput = container.querySelector('input[type="radio"]');
+    container.style.border = "1px solid hsl(169, 82%, 27%)";
     radioInput.checked = true;
+
+    // Remove the selected class from all radio containers
+    document
+      .querySelectorAll(".radio-container")
+      .forEach((c) => c.classList.remove("selected"));
+
+    // Add the selected class to the clicked container
+    container.classList.add("selected");
   });
 });
 
