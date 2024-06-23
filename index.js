@@ -136,7 +136,7 @@ submitButton.addEventListener("click", (e) => {
   }
 });
 
-function addInputListeners(input, errorElement, minLength = 1) {
+function addInputListeners(input, errorElement) {
   input.addEventListener("input", () => {
     validateTextInput(input, errorElement);
     adjustPadding();
