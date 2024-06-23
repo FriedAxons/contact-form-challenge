@@ -103,6 +103,19 @@ function adjustPadding() {
   formContainer.style.paddingBottom = activeErrors > 0 ? "30px" : "0px";
 }
 
+function disableAllInputs() {
+  const allInputs = document.querySelectorAll("input, textarea, button");
+  const radioContainers = document.querySelectorAll(".radio-container");
+
+  allInputs.forEach((input) => {
+    input.style.cursor = "default";
+    input.disabled = true;
+  });
+  radioContainers.forEach(
+    (container) => (container.style.pointerEvents = "none")
+  );
+}
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -131,7 +144,19 @@ submitButton.addEventListener("click", (e) => {
     checkbox.checked = false;
     radioInputs.forEach((radio) => (radio.checked = false));
 
+    // Remove the selected class from all radio containers
+    document.querySelectorAll(".radio-container").forEach((container) => {
+      container.classList.remove("selected");
+      container.style.border = "";
+    });
+
     successContainer.classList.add("active");
+    disableAllInputs();
+
+    // Refresh the page after 5 seconds
+    setTimeout(() => {
+      location.reload();
+    }, 5000);
   } else {
     // There are errors, adjust padding
     adjustPadding();
