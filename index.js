@@ -20,7 +20,7 @@ const checkboxError = document.querySelector(".consent-error");
 let formSubmitted = false;
 
 function validateTextInput(input, errorElement) {
-  if (input.value.trim() === "") {
+  if (formSubmitted && input.value.trim() === "") {
     input.style.border = "1px solid hsl(0, 66%, 54%)";
     errorElement.classList.add("active");
     return false;
@@ -33,7 +33,7 @@ function validateTextInput(input, errorElement) {
 
 function validateEmailInput(input, errorElement) {
   const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-  if (!emailPattern.test(input.value)) {
+  if (formSubmitted && !emailPattern.test(input.value)) {
     input.style.border = "1px solid hsl(0, 66%, 54%)";
     errorElement.classList.add("active");
     return false;
@@ -49,7 +49,7 @@ function validateRadioInput(radioInputs, errorElement) {
   radioInputs.forEach((radio) => {
     if (radio.checked) isChecked = true;
   });
-  if (!isChecked) {
+  if (formSubmitted && !isChecked) {
     errorElement.classList.add("active");
     return false;
   } else {
@@ -59,7 +59,7 @@ function validateRadioInput(radioInputs, errorElement) {
 }
 
 function validateCheckboxInput(checkbox, errorElement) {
-  if (!checkbox.checked) {
+  if (formSubmitted && !checkbox.checked) {
     errorElement.classList.add("active");
     return false;
   } else {
@@ -100,11 +100,14 @@ document.querySelectorAll(".radio-container").forEach((container) => {
 
 function adjustPadding() {
   const activeErrors = countActiveErrors();
-  formContainer.style.paddingBottom = activeErrors > 0 ? "35px" : "0px";
+  formContainer.style.paddingBottom = activeErrors > 0 ? "30px" : "0px";
 }
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
+
+  // Indicate form has been submitted
+  formSubmitted = true;
 
   const isFirstNameValid = validateTextInput(firstnameInput, firstnameError);
   const isLastNameValid = validateTextInput(lastnameInput, lastnameError);
@@ -129,7 +132,6 @@ submitButton.addEventListener("click", (e) => {
     radioInputs.forEach((radio) => (radio.checked = false));
 
     successContainer.classList.add("active");
-    formSubmitted = true;
   } else {
     // There are errors, adjust padding
     adjustPadding();
@@ -138,24 +140,30 @@ submitButton.addEventListener("click", (e) => {
 
 function addInputListeners(input, errorElement) {
   input.addEventListener("input", () => {
-    validateTextInput(input, errorElement);
-    adjustPadding();
+    if (formSubmitted) {
+      validateTextInput(input, errorElement);
+      adjustPadding();
+    }
   });
 }
 
 function addRadioListeners(radioInputs, errorElement) {
   radioInputs.forEach((radio) => {
     radio.addEventListener("change", () => {
-      validateRadioInput(radioInputs, errorElement);
-      adjustPadding();
+      if (formSubmitted) {
+        validateRadioInput(radioInputs, errorElement);
+        adjustPadding();
+      }
     });
   });
 }
 
 function addCheckboxListener(checkbox, errorElement) {
   checkbox.addEventListener("change", () => {
-    validateCheckboxInput(checkbox, errorElement);
-    adjustPadding();
+    if (formSubmitted) {
+      validateCheckboxInput(checkbox, errorElement);
+      adjustPadding();
+    }
   });
 }
 
