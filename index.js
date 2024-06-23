@@ -1,18 +1,23 @@
+// DOM elements
 const firstnameInput = document.getElementById("firstname-input");
-const firstnameError = document.querySelector(".firstname-error");
 const lastnameInput = document.getElementById("lastname-input");
-const lastnameError = document.querySelector(".lastname-error");
 const emailInput = document.getElementById("email-input");
-const emailError = document.querySelector(".email-error");
 const radioInputs = document.querySelectorAll('input[name="radioAnswer"]');
-const radioError = document.querySelector(".radio-error");
 const messageInput = document.getElementById("message-textarea");
-const textareaError = document.querySelector(".textarea-error");
 const checkbox = document.getElementById("checkbox");
-const checkboxError = document.querySelector(".consent-error");
 const submitButton = document.getElementById("submit-button");
 const successContainer = document.querySelector(".success-container");
 const formContainer = document.querySelector(".contact-form-container");
+
+// Error elements
+const firstnameError = document.querySelector(".firstname-error");
+const lastnameError = document.querySelector(".lastname-error");
+const emailError = document.querySelector(".email-error");
+const radioError = document.querySelector(".radio-error");
+const textareaError = document.querySelector(".textarea-error");
+const checkboxError = document.querySelector(".consent-error");
+
+let formSubmitted = false;
 
 function validateTextInput(input, errorElement) {
   if (input.value.trim() === "") {
@@ -76,15 +81,6 @@ function countActiveErrors() {
   return activeErrors;
 }
 
-function adjustPadding() {
-  const activeErrors = countActiveErrors();
-  if (activeErrors === 1) {
-    formContainer.style.padding = "20px 35px 10px 35px";
-  } else {
-    formContainer.style.padding = "20px 35px 0px 35px";
-  }
-}
-
 document.querySelectorAll(".radio-container").forEach((container) => {
   container.addEventListener("click", () => {
     const radioInput = container.querySelector('input[type="radio"]');
@@ -101,6 +97,11 @@ document.querySelectorAll(".radio-container").forEach((container) => {
     container.classList.add("selected");
   });
 });
+
+function adjustPadding() {
+  const activeErrors = countActiveErrors();
+  formContainer.style.paddingBottom = activeErrors > 0 ? "35px" : "0px";
+}
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -128,38 +129,33 @@ submitButton.addEventListener("click", (e) => {
     radioInputs.forEach((radio) => (radio.checked = false));
 
     successContainer.classList.add("active");
+    formSubmitted = true;
   } else {
+    // There are errors, adjust padding
     adjustPadding();
   }
 });
 
 function addInputListeners(input, errorElement, minLength = 1) {
   input.addEventListener("input", () => {
-    if (input.value.trim().length >= minLength) {
-      input.style.border = "1px solid hsl(186, 15%, 59%)";
-      errorElement.classList.remove("active");
-    } else {
-      input.style.border = "1px solid hsl(0, 66%, 54%)";
-      errorElement.classList.add("active");
-    }
+    validateTextInput(input, errorElement);
+    adjustPadding();
   });
 }
 
 function addRadioListeners(radioInputs, errorElement) {
   radioInputs.forEach((radio) => {
     radio.addEventListener("change", () => {
-      if (radio.checked) {
-        errorElement.classList.remove("active");
-      }
+      validateRadioInput(radioInputs, errorElement);
+      adjustPadding();
     });
   });
 }
 
 function addCheckboxListener(checkbox, errorElement) {
   checkbox.addEventListener("change", () => {
-    if (checkbox.checked) {
-      errorElement.classList.remove("active");
-    }
+    validateCheckboxInput(checkbox, errorElement);
+    adjustPadding();
   });
 }
 
@@ -169,3 +165,5 @@ addInputListeners(emailInput, emailError);
 addInputListeners(messageInput, textareaError);
 addRadioListeners(radioInputs, radioError);
 addCheckboxListener(checkbox, checkboxError);
+
+adjustPadding();
