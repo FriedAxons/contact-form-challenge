@@ -80,13 +80,19 @@
         <p class="textarea-error">This field is required</p>
       </div>
       <div class="checkbox-container">
-        <input type="checkbox" id="checkbox" />
-        <label for="checkbox"
-          >I consent to being contacted by the team<span>*</span></label
-        >
-        <p class="consent-error">
-          To submit this form, please consent to being contacted
-        </p>
+        <div class="checkbox-label-container">
+          <input type="checkbox" id="checkbox" />
+          <div class="container-for-label">
+            <label for="checkbox"
+              >I consent to being contacted by the team<span>*</span></label
+            >
+          </div>
+        </div>
+        <div class="consent-error-container">
+          <p class="consent-error">
+            To submit this form, please consent to being contacted
+          </p>
+        </div>
       </div>
       <button type="submit" id="submit-button">Submit</button>
     </form>
