@@ -42,7 +42,6 @@ Users should be able to:
 - Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/contact-form-3eb6CJqayV)
 - Live Site URL: [GitHub](https://friedaxons.github.io/contact-form-challenge/)
 
-
 ### Built with
 
 - HTML
