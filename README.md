@@ -39,9 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [GitHub](https://your-live-site-url.com)
-
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/contact-form-3eb6CJqayV)
+- Live Site URL: [GitHub](https://friedaxons.github.io/contact-form-challenge/)
 
 ### Built with
 
